@@ -1,0 +1,111 @@
+
+
+<div class="container">
+    <hr/>
+    <h4 style="text-align: center; color: rgb(0, 133, 222)">BLUE SHIELD OF CA</h4>
+    <p style="text-align: center; color: gray">
+        <strong>MEMBER INFO</strong>
+    </p>
+    <hr />
+    <div class="row">
+        <div class="col">
+            <h6>Subscriber ID</h6>
+            <p>
+                <strong>{{ subscriber.SBSB_ID }}</strong>
+            </p>
+        </div>
+        <div class="col">
+            <h6>Group ID</h6>
+            <p>
+                <strong>{{subscriber.GRGR_ID}}</strong>
+            </p>
+        </div>
+
+        <div class="col">
+            <h6>Status</h6>
+            <div *ngIf="subscriber.MEPE_ELIG_IND == 'Y'">
+                <strong>
+                    <p style="color: rgb(92, 169, 66)">Eligible</p>
+                </strong>
+            </div>
+            <div *ngIf="subscriber.MEPE_ELIG_IND == 'N'">
+                <strong>
+                    <p style="color: rgb(208,36,51)">Ineligible</p>
+                </strong>
+            </div>
+
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col">
+            <h6>Member Name</h6>
+            <p style="color: rgb(0, 133, 222)">
+                <strong>{{ subscriber.MEME_LAST_NAME }},
+                    {{ subscriber.MEME_FIRST_NAME }}</strong>
+            </p>
+        </div>
+        <div class="col">
+            <h6>Gender</h6>
+            <p>
+                <strong>{{ subscriber.MEME_SEX }}</strong>
+            </p>
+        </div>
+        <div class="col">
+            <h6>Date of birth</h6>
+            <p>
+                <strong>{{ subscriber.MEME_BIRTH_DT }}</strong>
+            </p>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col">
+            <h6>Address</h6>
+            <p>
+                <strong>{{ subscriber.SBAD_ADDR1 }} {{ subscriber.SBAD_ADDR2 }} {{ subscriber.SBAD_CITY }}, {{
+                    subscriber.SBAD_STATE }}
+                    {{ subscriber.SBAD_ZIP }}</strong>
+            </p>
+        </div>
+        <div class="col">
+            <h6>IN COPAY</h6>
+            <p>
+                <strong>{{subscriber.IN_COPAY}}</strong>
+            </p>
+        </div>
+        <div class="col">
+            <h6>PAR COPAY</h6>
+            <p>
+                <strong>{{subscriber.PAR_COPAY}}</strong>
+            </p>
+        </div>
+
+    </div>
+    <hr />
+    <div class="row">
+
+
+        <div class="col">
+            <h6>LOB</h6>
+            <p>
+                <strong>{{subscriber.PDPD_LOB}}</strong>
+            </p>
+        </div>
+
+        <div class="col">
+            <h6>PCP Name</h6>
+            <p>
+                <strong>{{subscriber.PCP_NAME}}</strong>
+            </p>
+        </div>
+
+        <div class="col">
+            <h6>Provider Group</h6>
+            <p>
+                <strong>{{subscriber.IPA_NAME}}</strong>
+            </p>
+        </div>
+    </div>
+    <hr />
+</div>
